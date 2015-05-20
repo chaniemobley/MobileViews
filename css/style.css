@@ -47,7 +47,7 @@ header {
   border-radius: 50%; }
 
 .view {
-  position: absolute;
+  position: fixed;
   height: 100%;
   height: 100vh;
   width: 100%;
@@ -56,11 +56,13 @@ header {
   left: 100%;
   padding: 10px;
   box-sizing: border-box;
-  overflow: scroll; }
+  overflow-x: hidden;
+  overflow-y: auto; }
   .view .content {
     width: 90%;
     margin: auto;
-    padding-bottom: 90px; }
+    padding-bottom: 90px;
+    overflow: scroll; }
     .view .content:after {
       content: "";
       display: table;
