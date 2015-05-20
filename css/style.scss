@@ -1,0 +1,162 @@
+//variables
+$dark: #222222;
+$red: #EB5055;
+$light: #FFFCF5;
+$aqua: #68C39F;
+
+*{
+  margin: 0;
+  padding: 0;
+}
+html{
+  height: 100%;
+  overflow: hidden;
+}
+body{
+  font-family: 'Roboto Condensed', sans-serif;
+  color: $light;
+  height: 100%;
+  background-color: $aqua;
+  overflow: hidden;
+}
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+header{
+  background-color: $light;
+  color: $red;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: 99;
+  padding: 20px;
+  nav{
+    margin: auto;
+    text-align: center;
+    display: table;
+    @include clearfix;
+    ul li{
+      width: 25%;
+      list-style: none;
+      display: table-cell;
+      text-align: center;
+      padding: 0 5%;
+      i{
+        color: $dark;
+      }
+    }
+  }
+}
+.imgResponsive{
+  width: 100%;
+  height: auto;
+}
+.imgRounded{
+  border-radius: 50%;
+}
+.view{
+  position: absolute;
+  height: 100%;
+  height: 100vh;
+  width: 100%;
+  width: 100vw;
+  background-color: $red;
+  left: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow: scroll;
+  .content{
+    width: 90%;
+    margin: auto;
+    padding-bottom: 90px;
+    @include clearfix;
+    h1{
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .col1{
+      width: 55%;
+      float: left;
+    }
+    .col2{
+      width: 45%;
+      float:right;
+    }
+    #userContainer{
+      display: table;
+      .picCol{
+        width: 55%;
+        display: table-cell;
+        padding: 10px;
+      }
+      .userCol{
+        width: 45%;
+        display: table-cell;
+        vertical-align: middle;
+        font-size: 2em;
+        color: $dark;
+      }
+    }
+    ul{
+      list-style: none;
+      li{
+        margin-bottom: 8px;
+      }
+      i{
+        padding-right: 5px;
+        color: $red;
+      }
+    }
+  }
+}
+.activeView{
+  background-color: $aqua;
+  left: 0;
+}
+#homeView{
+}
+#settingsView{
+  background-color: $dark;
+  form{
+    font-size: 2em;
+    font-weight: 400;
+    div{
+      padding-bottom: 5px;
+      .blocklabel{
+        display: block;
+        color: $aqua;
+      }
+      .smallLabel{
+        font-size: .4em;
+        font-weight: 300;
+        padding-left: 5px;
+      }
+      .styledInput{
+        font-weight: 300;
+        font-size: .7em;
+        width: 95%;
+        border: none;
+        padding: 5px;
+        border-radius: 5px;
+      }
+    }
+  }
+}
+#favoritesView{
+  background-color: $light;
+  color: $dark;
+}
+@media only screen and (max-width: 500px), only screen and (max-device-width: 500px){
+  .view .content .col1, .view .content .col2{
+    width: 100%;
+    float: none;
+    img{
+      margin-bottom: 20px;
+    }
+  }
+}
