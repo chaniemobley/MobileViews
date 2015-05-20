@@ -5,6 +5,18 @@ $(document).ready(function(){
 //        navigator.vibrate([1000, 1000, 5000, 1000]);
         navigator.vibrate(3000);
     });
+    function onSuccess(acceleration) {
+        alert('Acceleration X: ' + acceleration.x + '\n' +
+            'Acceleration Y: ' + acceleration.y + '\n' +
+            'Acceleration Z: ' + acceleration.z + '\n' +
+            'Timestamp: '      + acceleration.timestamp + '\n');
+    };
+
+    function onError() {
+        alert('onError!');
+    };
+
+    navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
 });
 function setBindings(){
     var currentView = "homeView";
