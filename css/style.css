@@ -61,7 +61,7 @@ header {
   -webkit-overflow-scrolling: touch; }
   .view .content {
     width: 90%;
-    margin: 40 auto;
+    margin: 40px auto 0 auto;
     padding-bottom: 90px;
     overflow: scroll; }
     .view .content:after {

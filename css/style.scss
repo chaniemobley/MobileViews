@@ -74,7 +74,7 @@ header{
   -webkit-overflow-scrolling: touch;
   .content{
     width: 90%;
-    margin: 40px auto;
+    margin: 40px auto 0 auto;
     padding-bottom: 90px;
     overflow: scroll;
     @include clearfix;
