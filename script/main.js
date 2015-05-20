@@ -7,14 +7,15 @@ $(document).ready(function(){
     });
     $(".motion").click(function(e){
         function onSuccess(acceleration) {
-            alert('Acceleration X: ' + acceleration.x + '\n' +
+            var info = 'Acceleration X: ' + acceleration.x + '\n' +
                 'Acceleration Y: ' + acceleration.y + '\n' +
                 'Acceleration Z: ' + acceleration.z + '\n' +
-                'Timestamp: '      + acceleration.timestamp + '\n');
+                'Timestamp: '      + acceleration.timestamp + '\n';
+            $(".feedback").html(info);
         }
 
         function onError() {
-            alert('onError!');
+            $('.feedback').html("It didn't work");
         }
         navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
     })
