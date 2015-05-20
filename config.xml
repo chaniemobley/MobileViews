@@ -16,7 +16,7 @@
     <author href="http://chaniemobley.com" email="chaniemobley@gmail.com">
         Chanie Mobley
     </author>
-
+    <gap:plugin name="org.apache.cordova.vibration" version="0.3.11" />
     <icon src="images/512.png" />
 
 

@@ -1,5 +1,9 @@
 $(document).ready(function(){
     setBindings();
+    $(".vibrate").click(function(e){
+        //this sets a pattern for vibration
+        navigator.vibrate([1000, 1000, 5000, 1000]);
+    });
 });
 function setBindings(){
     var currentView = "homeView";
