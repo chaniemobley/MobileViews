@@ -17,6 +17,7 @@
         Chanie Mobley
     </author>
     <gap:plugin name="org.apache.cordova.vibration" version="0.3.11" />
+    <gap:plugin name="org.apache.cordova.device-motion" version="0.2.10" />
     <icon src="images/512.png" />
 
 
