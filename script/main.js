@@ -7,17 +7,19 @@ $(document).ready(function(){
     });
     $(".motion").click(function(e){
         function onSuccess(acceleration) {
-            var info = 'Acceleration X: ' + acceleration.x + '\n' +
+            alert('Acceleration X: ' + acceleration.x + '\n' +
                 'Acceleration Y: ' + acceleration.y + '\n' +
                 'Acceleration Z: ' + acceleration.z + '\n' +
-                'Timestamp: '      + acceleration.timestamp + '\n';
-            $(".feedback").html(info);
-        }
+                'Timestamp: '      + acceleration.timestamp + '\n');
+        };
 
         function onError() {
-            $('.feedback').html("It didn't work");
-        }
-        navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
+            alert('onError!');
+        };
+
+        var options = { frequency: 3000 };  // Update every 3 seconds
+
+        var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
     })
 
 });
