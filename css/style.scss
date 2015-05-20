@@ -71,6 +71,7 @@ header{
   box-sizing: border-box;
   overflow-x: hidden;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   .content{
     width: 90%;
     margin: auto;
