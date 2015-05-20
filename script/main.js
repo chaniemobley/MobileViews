@@ -1,11 +1,23 @@
 $(document).ready(function(){
     setBindings();
-    detectMotion();
     $(".vibrate").click(function(e){
         //this sets a pattern for vibration
 //        navigator.vibrate([1000, 1000, 5000, 1000]);
         navigator.vibrate(3000);
     });
+    $(".motion").click(function(e){
+        function onSuccess(acceleration) {
+            alert('Acceleration X: ' + acceleration.x + '\n' +
+                'Acceleration Y: ' + acceleration.y + '\n' +
+                'Acceleration Z: ' + acceleration.z + '\n' +
+                'Timestamp: '      + acceleration.timestamp + '\n');
+        }
+
+        function onError() {
+            alert('onError!');
+        }
+        navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
+    })
 
 });
 function setBindings(){
@@ -30,18 +42,4 @@ function setBindings(){
             });
         }
     })
-}
-function detectMotion(){
-    function onSuccess(acceleration) {
-        alert('Acceleration X: ' + acceleration.x + '\n' +
-            'Acceleration Y: ' + acceleration.y + '\n' +
-            'Acceleration Z: ' + acceleration.z + '\n' +
-            'Timestamp: '      + acceleration.timestamp + '\n');
-    }
-
-    function onError() {
-        alert('onError!');
-    }
-
-    navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
 }
